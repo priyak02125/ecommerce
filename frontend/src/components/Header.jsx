@@ -5,9 +5,11 @@ import { IoIosMenu } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import {assets} from "../assests/assets.js";
 import Image from "next/image";
+import { useContext } from "react";
+import { ShopContext } from "../app/context/ShopContext";
 export default function Header() {
   const [visible, setVisible] = useState(false);
-
+  const {setShowSearch} = useContext(ShopContext)
   return (
     <div className="flex items-center justify-between px-28 py-5 text-gray-600 font-semibold">
       <div className="w-24"></div>
@@ -21,6 +23,7 @@ export default function Header() {
 
       <div className="flex gap-5 items-center text-2xl">
           <Image
+            onClick={() => setShowSearch(true)}
             src={assets.search_icon}
             alt="Hero Image"
             width={15}
