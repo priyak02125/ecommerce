@@ -3,40 +3,38 @@ import { useState } from "react";
 import Link from "next/link";
 import { IoIosMenu } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
-import {assets} from "../assests/assets.js";
+import { assets } from "../assests/assets.js";
 import Image from "next/image";
 import { useContext } from "react";
 import { ShopContext } from "../app/context/ShopContext";
 export default function Header() {
   const [visible, setVisible] = useState(false);
-  const {setShowSearch} = useContext(ShopContext)
+  const { setShowSearch, getCartCount } = useContext(ShopContext);
   return (
-    <div className="flex items-center justify-between px-28 py-5 text-gray-600 font-semibold">
-      <div className="w-24"></div>
-
-      <div className="flex gap-5 cursor-pointer">
+    <div className="flex items-center justify-between px-4 sm:px-8 md:px-16 lg:px-24 py-4 text-gray-600 font-semibold max-w-7xl mx-auto">
+      <div className="w-24 text-black font-bold">LOGO</div>
+      <div className="hidden sm:flex gap-6 cursor-pointer text-sm">
         <p>HOME</p>
         <p>COLLECTION</p>
         <p>ABOUT</p>
         <p>CONTACT</p>
       </div>
-
-      <div className="flex gap-5 items-center text-2xl">
-          <Image
-            onClick={() => setShowSearch(true)}
-            src={assets.search_icon}
-            alt="Hero Image"
-            width={15}
-            height={15}
-            className="cursor-pointer"
-          />
+      <div className="flex gap-4 sm:gap-5 items-center text-xl">
+        <Image
+          onClick={() => setShowSearch(true)}
+          src={assets.search_icon}
+          alt="Hero Image"
+          width={15}
+          height={15}
+          className="cursor-pointer"
+        />
         {/* PROFILE */}
         <div className="relative group">
           <Image
             src={assets.profile_icon}
             alt="Hero Image"
-            width={15}
-            height={15}
+            width={18}
+            height={18}
             className="cursor-pointer"
           />
           <div className="absolute right-0 mt-2 rounded group-hover:block hidden">
@@ -56,15 +54,15 @@ export default function Header() {
 
         {/* CART */}
         <Link href="/cart" className="relative">
-         <Image
+          <Image
             src={assets.cart_icon}
-            alt="Hero Image"
+            alt="cart_icon"
             width={15}
             height={15}
             className="cursor-pointer"
           />
-          <p className="absolute top-2 left-2 w-3 h-3 text-center leading-3 bg-black text-white aspect-square rounded-full text-[6px]">
-            10
+          <p className="absolute -top-1 -right-1 w-4 h-4 text-center leading-4 bg-black text-white rounded-full text-[10px]">
+           {getCartCount()}
           </p>
         </Link>
 
@@ -79,12 +77,12 @@ export default function Header() {
 
       {/* SIDEBAR */}
       <div
-        className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${
-          visible ? "w-full" : "w-0"
+        className={`fixed top-0 right-0 h-full bg-white z-50 transition-all duration-300 ${
+          visible ? "w-full sm:w-80" : "w-0"
         }`}
       >
         {/* sidebar content */}
-        <div className="flex flex-col text-gray-600 ">
+       <div className="flex flex-col text-gray-600 p-5">
           <div
             onClick={() => setVisible(false)}
             className="flex items-center gap-2 text-xl cursor-pointer"
@@ -97,7 +95,7 @@ export default function Header() {
           <Link
             href="/"
             onClick={() => setVisible(false)}
-            className="block border-t border-b border-gray-200 pl-4 py-2 mt-5"
+            className="border-b border-gray-200 px-4 py-3 text-sm"
           >
             HOME
           </Link>
