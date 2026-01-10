@@ -121,7 +121,7 @@ const Page = () => {
               <div>
                 <button
                   onClick={() => addTocart(productData._id, size)}
-                  className="w-full sm:w-auto bg-black text-white px-8 py-3 text-sm rounded-md active:bg-gray-700"
+                  className="w-full sm:w-auto  cursor-pointer bg-black text-white px-8 py-3 text-sm rounded-md active:bg-gray-700"
                 >
                   ADD TO CART
                 </button>
@@ -136,8 +136,8 @@ const Page = () => {
           </div>
         </div>
         <div className="mt-16 sm:mt-20">
-          <div className="flex text-xs sm:text-sm mt-16">
-            <p className="border border-gray-300 px-5 py-3 text-sm">
+          <div className="flex text-xs sm:text-sm mt-16 mb-3">
+            <p className="border border-gray-300 px-5 py-3 text-sm ">
               Description
             </p>
             <p className="border border-gray-300 px-5 py-3 text-sm">
@@ -162,6 +162,7 @@ const Page = () => {
         <RelatedProduct
           category={productData.category}
           subCategory={productData.subCategory}
+          currentProductID= {productData._id}
         />
       </div>
     </div>

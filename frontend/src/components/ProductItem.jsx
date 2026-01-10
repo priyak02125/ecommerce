@@ -5,14 +5,11 @@ import Link from "next/link";
 import Image from "next/image";
 import { ShopContext } from "../app/context/ShopContext";
 
-const ProductItem = ({ id, title, price, image }) => {
+const ProductItem = ({ id, name, title, price, image }) => {
   const { currency } = useContext(ShopContext);
 
   return (
-    <Link
-      href={`/product/${id}`}
-      className="text-gray-700 cursor-pointer"
-    >
+    <Link href={`/product/${id}`} className="text-gray-700 cursor-pointer">
       <div className="overflow-hidden">
         <Image
           src={image[0]}
@@ -24,10 +21,15 @@ const ProductItem = ({ id, title, price, image }) => {
       </div>
 
       <p className="pt-3 pb-1 text-xs">{title}</p>
-      <p className="text-sm font-medium">{currency}{price}
+      <p className="text-sm font-medium">
+        {name}
+        <div className="mt-2">
+        {currency}
+        {price}
+        </div>
       </p>
     </Link>
   );
 };
 
-export default  ProductItem;
+export default ProductItem;

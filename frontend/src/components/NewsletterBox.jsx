@@ -7,7 +7,7 @@ function NewsletterBox() {
   };
 
   return (
-    <div className='text-center px-4 py-8'>
+    <div className='text-center px-4 '>
       <p className='text-xl sm:text-2xl font-medium text-gray-800'>
         Subscribe now & get 20% off
       </p>

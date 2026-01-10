@@ -1,11 +1,13 @@
 import React from 'react'
-import Orders from '../../components/pages/Orders'
+import Login from '../../components/pages/Login'
+
 function page() {
   return (
-    <div >
-      <Orders/>
+    <div>
+      <Login/>
     </div>
   )
 }
 
 export default page
+

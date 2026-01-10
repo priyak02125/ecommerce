@@ -1,11 +1,13 @@
 import React from 'react'
-import Orders from '../../components/pages/Orders'
+import About from '../../components/pages/About'
+
 function page() {
   return (
-    <div >
-      <Orders/>
+    <div>
+      <About/>
     </div>
   )
 }
 
 export default page
+

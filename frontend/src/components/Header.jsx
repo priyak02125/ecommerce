@@ -11,13 +11,30 @@ export default function Header() {
   const [visible, setVisible] = useState(false);
   const { setShowSearch, getCartCount } = useContext(ShopContext);
   return (
-    <div className="flex items-center justify-between px-4 sm:px-8 md:px-16 lg:px-24 py-4 text-gray-600 font-semibold max-w-7xl mx-auto">
-      <div className="w-24 text-black font-bold">LOGO</div>
+    <div className="flex items-center justify-between px-4 sm:px-8 lg:px-24 py-4 text-gray-600 font-semibold max-w-7xl mx-auto">
+      <div className="">
+        <Image
+          // onClick={() => setShowSearch(true)}
+          src="/logo1.png"
+          alt="Logo Image"
+          width={200}
+          height={200}
+          className="cursor-pointer"
+        />
+      </div>
       <div className="hidden sm:flex gap-6 cursor-pointer text-sm">
-        <p>HOME</p>
-        <p>COLLECTION</p>
-        <p>ABOUT</p>
-        <p>CONTACT</p>
+        <Link href = "/">
+        <div>HOME</div>
+        </Link>
+        <Link href = "/collection">
+        <div>COLLECTION</div>
+        </Link>
+        <Link href = "/about">
+        <div>ABOUT</div>
+        </Link>
+          <Link href = "/contact">
+        <div>CONTACT</div>
+        </Link>
       </div>
       <div className="flex gap-4 sm:gap-5 items-center text-xl">
         <Image
@@ -95,7 +112,7 @@ export default function Header() {
           <Link
             href="/"
             onClick={() => setVisible(false)}
-            className="border-b border-gray-200 px-4 py-3 text-sm"
+            className="border-b border-gray-200 px-4 py-3"
           >
             HOME
           </Link>

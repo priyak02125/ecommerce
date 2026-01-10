@@ -112,7 +112,7 @@ const Cart = () => {
           <div className="w-full text-end">
             <button
               onClick={() => router.push("/place-order")}
-              className="bg-black text-white text-xs my-6 px-4 py-2 rounded-sm"
+              className="bg-black cursor-pointer text-white text-xs my-6 px-4 py-2 rounded-sm"
             >
               PROCEED TO CHECKOUT
             </button>

@@ -7,7 +7,7 @@ const Orders = () => {
   const { products, currency } = useContext(ShopContext);
   return (
     <div className="px-22">
-    <div className="border-t">
+    <div className="border-t border-gray-300">
       <div className="text-2xl">
         <div className="text-xl sm:text-2xl mt-8">
           <Title text1={"MY"} text2={"ORDERS"} />
@@ -17,9 +17,9 @@ const Orders = () => {
         {products.slice(1, 4).map((item, index) => (
           <div
             key={index}
-            className="py-4 border-t border-b text-gray-700 flex justify-between "
+            className="py-4 border-t border-b border-gray-300 text-gray-700 flex justify-between"
           >
-            <div className="flex gap-2" >
+            <div className="flex gap-2 w-96" >
               <Image
                 src={item.image[0]}
                 width={100}
@@ -43,7 +43,7 @@ const Orders = () => {
               <p className="text-sm md:text-base ">Ready to Ship</p>
              </div>
              <div className="flex items-center">
-             <button className="border px-4 py-2 text-sm font-medium rounded-sm">Track Order</button>
+             <button className="border border-gray-300 px-4 py-2 text-sm font-medium rounded-sm">Track Order</button>
              </div>
             </div>
          

@@ -46,7 +46,7 @@ function Footer() {
 
       {/* Copyright */}
       <div className="text-center mt-5 text-gray-600">
-        © 2024 Ecommerce. All rights reserved.
+        © 2026 Ecommerce. All rights reserved.
       </div>
     </div>
   );
