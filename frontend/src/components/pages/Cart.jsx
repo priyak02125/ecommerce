@@ -94,7 +94,7 @@ const Cart = () => {
               <div>
                 <Image
                   src={assets.bin_icon}
-                  alt="Hero Image"
+                  alt="bin_icon"
                   onClick={() => updateQuantity(item._id, item.size, 0)}
                   width={15}
                   height={15}
