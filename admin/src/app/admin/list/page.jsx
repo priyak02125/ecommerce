@@ -1,10 +1,10 @@
 import React from 'react'
-import Orders from '../../components/Orders'
+import List from '../../../components/List'
 
 function page() {
   return (
     <div>
-      <Orders/>
+      <List/>
     </div>
   )
 }

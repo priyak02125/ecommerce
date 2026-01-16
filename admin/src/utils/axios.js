@@ -1,6 +1,7 @@
 import axios from "axios";
 
 let token = null;
+console.log("api token",token)
 
 if (typeof window !== "undefined") {
   const auth = JSON.parse(localStorage.getItem("auth"));
@@ -11,7 +12,7 @@ const api = axios.create({
   baseURL: "http://localhost:4000",
   headers: {
     "Content-Type": "application/json",
-    Authorization: token ? `Bearer ${token}` : "",
+    // Authorization: token ? `Bearer ${token}` : "",
   },
 });
 

@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import api from "@/utils/axios";
+import { useRouter } from "next/navigation";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,12 +24,21 @@ const Login = () => {
       const accessToken = res.data.token; 
       setToken(accessToken);
       localStorage.setItem("auth", JSON.stringify(res.data));
-      window.location.reload();
+      // window.location.reload();
       
     } catch (error) {
       console.error("Login failed:", error.response?.data || error.message);
     }
   };
+
+  const router = useRouter (); 
+
+  useEffect ( ()=> {
+    if(token){
+      router.push("/admin")
+    }
+
+  },[token])
 
   return (
     <div className="min-h-screen flex items-center justify-center w-full">

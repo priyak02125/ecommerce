@@ -3,11 +3,11 @@
 import Image from "next/image";
 import api from "@/utils/axios";
 
-const Navbar = ({ setToken }) => {
+const Navbar = () => {
   const logout = async (e) => {
     e.preventDefault();
     localStorage.removeItem("auth");
-    setToken(null);
+    // setToken("");
 
     try {
       const res = await api.post("/api/user/logout");
@@ -19,8 +19,7 @@ const Navbar = ({ setToken }) => {
   };
 
   return (
-    <div className="flex items-center py-2 px-[4%] justify-between">
-      <Image src="/logo1.png" alt="logo" width={150} height={100} />
+    <div className="flex items-center py-2 px-[4%] justify-end">
       <button
         onClick={logout}
         className="bg-gray-600 text-white px-5 py-2 rounded-full text-sm"

@@ -1,10 +1,8 @@
-"use client";
-import Login from "../components/Login";
 
 export default function HomePage() {
   return (
     <div className="bg-gray-50 min-h-screen">
-      <Login />
+      <h1 className="ml-2">Welcome</h1>
     </div>
   );
 }
