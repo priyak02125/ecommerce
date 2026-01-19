@@ -1,14 +1,13 @@
 "use client";
-
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Image from "next/image";
-import { ShopContext } from "../../context/ShopContext";
+import { ShopContext } from "../../../store/ShopContext";
 import { assets } from "../../../assests/assets";
 import RelatedProduct from "../../../components/RelatedProduct";
 const Page = () => {
   const { productId } = useParams();
-  const { products, currency, addTocart } = useContext(ShopContext);
+  const { products, currency, addToCart } = useContext(ShopContext);
   const [productData, setProductData] = useState(false);
   const [image, setImage] = useState("");
   const [size, setSize] = useState("");
@@ -120,7 +119,7 @@ const Page = () => {
               </div>
               <div>
                 <button
-                  onClick={() => addTocart(productData._id, size)}
+                  onClick={() => addToCart(productData._id, size)}
                   className="w-full sm:w-auto  cursor-pointer bg-black text-white px-8 py-3 text-sm rounded-md active:bg-gray-700"
                 >
                   ADD TO CART

@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io";
 import { assets } from "../assests/assets.js";
 import Image from "next/image";
 import { useContext } from "react";
-import { ShopContext } from "../app/context/ShopContext";
+import { ShopContext } from "../store/ShopContext.jsx";
 export default function Header() {
   const [visible, setVisible] = useState(false);
   const { setShowSearch, getCartCount } = useContext(ShopContext);
@@ -17,7 +17,7 @@ export default function Header() {
           // onClick={() => setShowSearch(true)}
           src="/logo1.png"
           alt="Logo Image"
-          width={200}
+          width={100}
           height={200}
           className="cursor-pointer"
         />
@@ -79,7 +79,7 @@ export default function Header() {
             className="cursor-pointer"
           />
           <p className="absolute -top-1 -right-1 w-4 h-4 text-center leading-4 bg-black text-white rounded-full text-[10px]">
-           {getCartCount()}
+           {getCartCount}
           </p>
         </Link>
 

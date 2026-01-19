@@ -4,7 +4,7 @@ import React, { useContext, useEffect } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { assets } from "../assests/assets";
-import { ShopContext } from "../app/context/ShopContext";
+import { ShopContext } from "../store/ShopContext";
 
 const SearchBar = () => {
   const { search, setSearch, showSearch, setShowSearch } =

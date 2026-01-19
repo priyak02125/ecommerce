@@ -1,7 +1,6 @@
 "use client";
-
 import { useContext, useState, useMemo } from "react";
-import { ShopContext } from "../../app/context/ShopContext";
+import { ShopContext } from "../../store/ShopContext.jsx";
 import { assets } from "../../assests/assets.js";
 import Image from "next/image";
 import Title from "../Title.jsx";
@@ -9,6 +8,8 @@ import ProductItem from "../ProductItem.jsx";
 
 const Collection = () => {
   const { products, search, showSearch } = useContext(ShopContext);
+
+  // console.log("products", products);
 
   // Filter & sort state
   const [showFilter, setShowFilter] = useState(true);
@@ -25,8 +26,23 @@ const Collection = () => {
     }
   };
 
+  // const topwearLength = products.filter(
+  //   (item) => item.subCategory === "Topwear",
+  // ).length;
+  // const BottomwearLength = products.filter(
+  //   (item) => item.subCategory === "Bottomwear",
+  // ).length;
+  // const WinterwearLength = products.filter(
+  //   (item) => item.subCategory === "Winterwear",
+  // ).length;
+
+  // console.log("topwearLength : ",topwearLength);
+  // console.log("BottomwearLength : ",BottomwearLength);
+  // console.log("WinterwearLength : ",WinterwearLength);
+
   // Toggle subcategory selection
   const togglesubCategory = (value) => {
+    console.log("togglesubCategory being called");
     if (subcategory.includes(value)) {
       setSubcategory((prev) => prev.filter((item) => item !== value));
     } else {
@@ -35,44 +51,45 @@ const Collection = () => {
   };
 
   const filteredProducts = useMemo(() => {
-  let productsCopy = products.slice();
+    let productsCopy = products.slice();
 
-  // Filter by search term
-  if (showSearch && search) {
-    productsCopy = productsCopy.filter((item) =>
-      item.name.toLowerCase().includes(search.toLowerCase())
-    );
-  }
+    // Filter by search term
+    if (showSearch && search) {
+      productsCopy = productsCopy.filter((item) =>
+        item.name.toLowerCase().includes(search.toLowerCase()),
+      );
+    }
 
-  // Filter by category
-  if (category.length > 0) {
-    productsCopy = productsCopy.filter((item) =>
-      category.includes(item.category)
-    );
-  }
+    // Filter by category
+    if (category.length > 0) {
+      productsCopy = productsCopy.filter((item) =>
+        category.includes(item.category),
+      );
+    }
 
-  // Filter by subcategory
-  if (subcategory.length > 0) {
-    productsCopy = productsCopy.filter((item) =>
-      subcategory.includes(item.subCategory)
-    );
-  }
+    // Filter by subcategory
+    if (subcategory.length > 0) {
+      productsCopy = productsCopy.filter((item) =>
+        subcategory.includes(item.subCategory),
+      );
+    }
 
-  // Sort products
-  switch (sortType) {
-    case "low-high":
-      productsCopy.sort((a, b) => a.price - b.price);
-      break;
-    case "high-low":
-      productsCopy.sort((a, b) => b.price - a.price);
-      break;
-    default:
-      break;
-  }
+    // Sort products
+    switch (sortType) {
+      case "low-high":
+        productsCopy.sort((a, b) => a.price - b.price);
+        break;
+      case "high-low":
+        productsCopy.sort((a, b) => b.price - a.price);
+        break;
+      default:
+        break;
+    }
 
-  return productsCopy;
-}, [products, category, subcategory, sortType, search, showSearch]);
+    return productsCopy;
+  }, [products, category, subcategory, sortType, search, showSearch]);
 
+  console.log("subcategory", subcategory);
 
   return (
     <div className="px-6 sm:px-22">

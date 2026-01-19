@@ -1,7 +1,7 @@
 import "./globals.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import ShopContextProvider from "./context/ShopContext";
+import ShopContextProvider from "../store/ShopContext";
 import SearchBar from "../components/SearchBar";
 import { ToastContainer } from 'react-toastify';
 export default function RootLayout({ children }) {

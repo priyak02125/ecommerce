@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useMemo } from "react";
-import { ShopContext } from "../app/context/ShopContext";
+import { ShopContext } from "../store/ShopContext";
 import Title from "./Title";
 import ProductItem from "./ProductItem";
 

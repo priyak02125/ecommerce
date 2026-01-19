@@ -2,7 +2,7 @@
 import React, { useContext } from "react";
 import Title from "../Title";
 import Image from "next/image";
-import { ShopContext } from "../../app/context/ShopContext";
+import { ShopContext } from "../../store/ShopContext";
 const Orders = () => {
   const { products, currency } = useContext(ShopContext);
   return (

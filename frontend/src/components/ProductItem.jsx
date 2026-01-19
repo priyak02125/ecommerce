@@ -3,7 +3,7 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ShopContext } from "../app/context/ShopContext";
+import { ShopContext } from "../store/ShopContext";
 
 const ProductItem = ({ id, name, title, price, image }) => {
   const { currency } = useContext(ShopContext);
@@ -20,14 +20,14 @@ const ProductItem = ({ id, name, title, price, image }) => {
         />
       </div>
 
-      <p className="pt-3 pb-1 text-xs">{title}</p>
-      <p className="text-sm font-medium">
+      {/* <p className="pt-3 pb-1 text-xs">{title}</p> */}
+      <div className="text-sm font-medium">
         {name}
-        <div className="mt-2">
-        {currency}
-        {price}
-        </div>
-      </p>
+        <p className="mt-2">
+          {currency}
+          {price}
+        </p>
+      </div>
     </Link>
   );
 };

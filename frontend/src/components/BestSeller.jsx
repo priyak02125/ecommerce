@@ -1,15 +1,14 @@
 'use client';
 import React, { useContext } from "react";
 import Title from "./Title";
-import { ShopContext } from "../app/context/ShopContext";
+import { ShopContext } from "../store/ShopContext";
 import ProductItem from "./ProductItem";
 const Bestseller = () => {
   const { products } = useContext(ShopContext);
-
-  const bestsellerProducts = products
-    .filter((item) => item.bestseller)
-    .slice(0, 5);
-
+// console.log("products",products)
+  const bestsellerProducts = products.filter((item) => item.bestseller)
+  products.slice(0, 5);
+// console.log("bestsellerProducts",bestsellerProducts)
   return (
     <div className="my-10">
       <div className="text-center text-3xl py-8">

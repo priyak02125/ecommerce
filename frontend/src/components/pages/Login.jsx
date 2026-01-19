@@ -1,10 +1,26 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
+import { ShopContext } from '../../store/ShopContext';
+import axios from 'axios';
 const Login = () => {
 const [currentState, setCurrentState] = useState('Sign Up');
+const { token, setToken,navigate,backendUrl } = useContext (ShopContext)
+
+const [name,setName] = useState('')
+const [password,setPassword] = useState('')
+const [email,setEmail] = useState('')
 
 const onSubmitHandler = async (event) => {
     event.preventDefault ();
+    try {
+      if (currentState=== 'Sign Up'){
+         const response = await axios.post(backendUrl + '/api/user/register',{name,email,password})
+         console.log(response.data);
+      }
+      
+    } catch (error) {
+      
+    }
 }
 
   return (
@@ -18,6 +34,8 @@ const onSubmitHandler = async (event) => {
   {/* Name Input */}
   {currentState === 'Login' ? '' :  
   <input
+    onChange={(e)=>setName(e.target.value)}
+    value={name}
     type="text"
     id="name"
     name="name"
@@ -29,6 +47,8 @@ const onSubmitHandler = async (event) => {
 
   {/* Email Input */}
   <input
+    onChange={(e)=>setEmail(e.target.value)}
+    value={email}
     type="email"
     id="email"
     name="email"
@@ -39,6 +59,8 @@ const onSubmitHandler = async (event) => {
 
   {/* Password Input */}
   <input
+    onChange={(e)=>setPassword(e.target.value)}
+    value={password}
     type="password"
     id="password"
     name="password"

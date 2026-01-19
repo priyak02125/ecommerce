@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext } from "react";
-import { ShopContext } from "../../app/context/ShopContext";
+import { ShopContext } from "../../store/ShopContext";
 import Title from "../Title";
 import Image from "next/image";
 import { assets } from "../../assests/assets";
