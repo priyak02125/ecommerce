@@ -1,11 +1,13 @@
 "use client"
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { ShopContext } from '../../store/ShopContext';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation'
 const Login = () => {
 const [currentState, setCurrentState] = useState('Sign Up');
-const { token, setToken,navigate,backendUrl } = useContext (ShopContext)
-
+const { token, setToken,backendUrl } = useContext (ShopContext)
+ const router = useRouter()
 const [name,setName] = useState('')
 const [password,setPassword] = useState('')
 const [email,setEmail] = useState('')
@@ -15,13 +17,33 @@ const onSubmitHandler = async (event) => {
     try {
       if (currentState=== 'Sign Up'){
          const response = await axios.post(backendUrl + '/api/user/register',{name,email,password})
-         console.log(response.data);
+         if (response.data.success) {
+          setToken(response.data.token)
+          localStorage.setItem('token',response.data.token)
+         } else {
+          toast.error(response.data.message)
+         }
+      } else {
+        const response = await axios.post(backendUrl+'/api/user/login',{email,password})
+        if(response.data.success){
+          setToken(response.data.token)
+          localStorage.setItem('token',response.data.token)
+        } else {
+          toast.error(response.data.message)
+        }
       }
       
     } catch (error) {
-      
+      console.log(error)
+      toast.error(error.message)
     }
 }
+
+useEffect(() => {
+    if (token) {
+      router.push('/')
+    }
+  }, [token, router])
 
   return (
 <form  onSubmit={onSubmitHandler} className="max-w-md mx-auto mt-10 p-4 flex flex-col gap-4">
