@@ -13,8 +13,28 @@ const Cart = () => {
 
   const router = useRouter();
 
-  const cartData = React.useMemo(() => {
+  // const cartData = React.useMemo(() => {
+  //   if(products.lenght > 0){
+  //       const tempData = [];
+  //   for (const productId in cartItems) {
+  //     for (const size in cartItems[productId]) {
+  //       if (cartItems[productId][size] > 0) {
+  //         tempData.push({
+  //           _id: productId,
+  //           size: size,
+  //           quantity: cartItems[productId][size],
+  //         });
+  //       }
+  //     }
+  //   }
+  //   return tempData; 
+  //   }
+  // }, [cartItems,products]);
+
+const cartData = React.useMemo(() => {
+  if (products.length > 0) {   // ✅ FIXED typo
     const tempData = [];
+
     for (const productId in cartItems) {
       for (const size in cartItems[productId]) {
         if (cartItems[productId][size] > 0) {
@@ -27,7 +47,11 @@ const Cart = () => {
       }
     }
     return tempData;
-  }, [cartItems]);
+  }
+
+  return []; // ✅ IMPORTANT
+}, [cartItems, products]);
+
 
   return (
     <div className="px-22">
