@@ -3,8 +3,35 @@ import React, { useContext } from "react";
 import Title from "../Title";
 import Image from "next/image";
 import { ShopContext } from "../../store/ShopContext";
-const Orders = () => {
-  const { products, currency } = useContext(ShopContext);
+import { useState } from "react";
+import { useEffect } from "react";
+ const Orders = () => {
+  const {backendUrl, token, currency } = useContext(ShopContext);
+  const [orderData,setorderData] = useState([])
+  const loadOrderData = async () => {
+    try {
+
+      if (!token){
+        return null
+      }
+
+      const response = await axios.post(
+        backendUrl + "/api/order/useorders",
+        {},
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      console.log(response.data);
+      
+    } catch (error) {
+      
+    }
+  }
+
+  useEffect (()=>{
+
+  },[token])
+
   return (
     <div className="px-22">
     <div className="border-t border-gray-300">
@@ -14,7 +41,8 @@ const Orders = () => {
         </div>
       </div>
       <div>
-        {products.slice(1, 4).map((item, index) => (
+        {
+       orderData.map((item, index) => (
           <div
             key={index}
             className="py-4 border-t border-b border-gray-300 text-gray-700 flex justify-between"

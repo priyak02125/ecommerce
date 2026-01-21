@@ -26,6 +26,21 @@ const Page = () => {
     fetchProductData();
   }, [productId]);
 
+  useEffect(() => {
+  if (products.length > 0 && productId) {
+    const product = products.find(item => item._id === productId);
+    if (product) {
+      setProductData(product);
+      setImage(product.image[0]);
+    }
+  }
+}, [productId, products]);
+
+
+  // console.log({productData})
+  // const storedUserId = localStorage.getItem("userId");
+  // console.log({storedUserId})
+
   return productData ? (
     <div className="px-4 sm:px-6 md:px-10 lg:px-16 xl:px-24 max-w-7xl mx-auto">
       <div className="border-t border-gray-300 pt-10 transition-opacity ease-in duration-500 opacity-100 ">
@@ -119,7 +134,7 @@ const Page = () => {
               </div>
               <div>
                 <button
-                  onClick={() => addToCart(productData._id, size)}
+                  onClick={() => addToCart(productData._id, size, )}
                   className="w-full sm:w-auto  cursor-pointer bg-black text-white px-8 py-3 text-sm rounded-md active:bg-gray-700"
                 >
                   ADD TO CART

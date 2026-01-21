@@ -15,25 +15,29 @@ const loginUser = async (req, res) => {
     const user = await userModel.findOne({ email });
 
     if (!user) {
-      return res.json({ success: false, message: "User doesn't exists" });
-    }
-    const isMatch = await bcrypt.compare(password, user.password);
-    if (isMatch) {
-      const token = createToken(user._id);
-      res.json({ success: true, token });
-    } else {
-      res.json({ success: false, message: "Invalid credentials" });
+      return res.json({ success: false, message: "User doesn't exist" });
     }
 
-    res.status(200).json({
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.json({ success: false, message: "Invalid credentials" });
+    }
+
+    const token = createToken(user._id);
+
+    return res.json({
       success: true,
-      message: "login successfully"
-    })
+      message: "Login successful",
+      token
+    });
+
   } catch (error) {
     console.log(error);
-    res.json({ success: false, message: error.message });
+    return res.json({ success: false, message: error.message });
   }
 };
+
 
 // Route for user register
 const registerUser = async (req, res) => {

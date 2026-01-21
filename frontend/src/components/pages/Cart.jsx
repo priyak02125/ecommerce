@@ -8,8 +8,18 @@ import CartTotal from "./CartTotal";
 import { useRouter } from "next/navigation";
 
 const Cart = () => {
-  const { products, currency, cartItems, updateQuantity } =
-    useContext(ShopContext);
+  // const { products, currency, cartItems, updateQuantity } =
+  //   useContext(ShopContext);
+
+const {
+  products,
+  currency,
+  cartItems,
+  updateQuantity,
+  token,
+  userId
+} = useContext(ShopContext);
+
 
   const router = useRouter();
 
@@ -99,7 +109,7 @@ const cartData = React.useMemo(() => {
 
               <div>
                 <input
-                  className="border max-w-10 sm:max-w-10 px-1 sm:px-2 py-1"
+                  className="border max-w-10 sm:max-w-13 px-1 sm:px-2 py-1"
                   type="number"
                   min={1}
                   defaultValue={item.quantity}
