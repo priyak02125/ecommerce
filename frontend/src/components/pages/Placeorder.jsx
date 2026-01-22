@@ -73,6 +73,7 @@ function Placeorder() {
 
 
   let orderItems = [];
+  console.log("order",orderItems)
 
 for (const productId in cartItems) {
   for (const size in cartItems[productId]) {
@@ -81,7 +82,8 @@ for (const productId in cartItems) {
       orderItems.push({
         productId, // Only ID
         size,
-        quantity
+        quantity,
+        
       });
     }
   }
