@@ -17,8 +17,7 @@ const Contact = () => {
           height={300}
           className="cursor-pointer"
         />
-        {/* <div className="mummy ko bol du aaj live ho rha hai to late ho jayega?"></div> */}
-        {/* <p className="aaj confirm live ho jayega fir?"></p> */}
+        
         <div className="flex flex-col justify-center items-start gap-6">
           <p className="font-semibold text-xl text-gray-600">Our Store</p>
           <p className="text-gray-600"> 54330 Willims Station<span className="block text-sm"> suite 30, Washington, USA</span>
