@@ -20,7 +20,17 @@ const orderSchema = new mongoose.Schema({
 
   amount: { type: Number, required: true },
   address: { type: Object, required: true },
-  status: { type: String, default: "order Placed" },
+  status: {
+    type: String,
+    enum: [
+      "Order Placed",
+      "Packing",
+      "Shipped",
+      "Out for delivery",
+      "Delivered",
+    ],
+    default: "Order Placed",
+  },
   paymentMethod: { type: String, required: true },
   payment: { type: Boolean, default: false },
   date: { type: Number, required: true },

@@ -4,6 +4,7 @@ import productModel from "../models/productModel.js";
 
 // Placing orders using COD Method
 const placeOrder = async (req, res) => {
+  console.log("placeOrder is being called")
   try {
     const { items, amount, address } = req.body;
     const userId = req.user.id;
@@ -56,7 +57,18 @@ const placeOrderStripe = async (req, res) => {};
 const placeOrderRazorpay = async (req, res) => {};
 
 // All Orders data for Admin Panel
-const allOrders = async (req, res) => {};
+const allOrders = async (req, res) => {
+   try {
+    //  const { userId } = req.body;
+    // const userId = req.user.id;
+    // console.log(userId);
+    const orders = await orderModel.find();
+    res.json({ success: true, orders });
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
 
 // All Orders data for Frontend
 const userOrders = async (req, res) => {
@@ -73,7 +85,17 @@ const userOrders = async (req, res) => {
 };
 
 // update order status from Admin panel
-const updateStatus = async (req, res) => {};
+const updateStatus = async (req, res) => {
+  try {
+    const {orderId,status} = req.body
+
+    await orderModel.findByIdAndUpdate(orderId,{status})
+    res.json({success:true,message:'Status Updated'})
+  } catch (error) {
+     console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
 
 export {
   placeOrder,

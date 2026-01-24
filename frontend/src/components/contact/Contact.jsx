@@ -17,11 +17,13 @@ const Contact = () => {
           height={300}
           className="cursor-pointer"
         />
+        {/* <div className="mummy ko bol du aaj live ho rha hai to late ho jayega?"></div> */}
+        {/* <p className="aaj confirm live ho jayega fir?"></p> */}
         <div className="flex flex-col justify-center items-start gap-6">
           <p className="font-semibold text-xl text-gray-600">Our Store</p>
-          <p className="text-gray-600"> 54330 Willims Station<span class="block text-sm"> suite 30, Washington, USA</span>
+          <p className="text-gray-600"> 54330 Willims Station<span className="block text-sm"> suite 30, Washington, USA</span>
           </p>
-           <p className="text-gray-600"> Tel: (415) 555-0132  <span class="block text-sm"> Email: admin@foever.com   </span>
+           <p className="text-gray-600"> Tel: (415) 555-0132  <span className="block text-sm"> Email: admin@foever.com   </span>
           </p>
           <p className="font-medium text-xl text-gray-600">Careers at Forever</p>
            <p className="text-lg text-gray-600">Learn more about our teams and job openings</p>
