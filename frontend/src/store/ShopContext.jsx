@@ -74,7 +74,7 @@ const ShopContextProvider = ({ children }) => {
     if (!token) return;
 
     try {
-      const { data } = await axios.get(`http://localhost:4000/api/cart/get`, {
+      const { data } = await axios.get(`https://ecommerce-to57.onrender.com/api/cart/get`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       console.log("data", data);
@@ -113,7 +113,7 @@ const ShopContextProvider = ({ children }) => {
 
       try {
         await axios.post(
-          `http://localhost:4000/api/cart/add`,
+          `https://ecommerce-to57.onrender.com/api/cart/add`,
           { itemId, size },
           {
             headers: { Authorization: `Bearer ${token}` },

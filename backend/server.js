@@ -14,9 +14,14 @@ const port = process.env.PORT || 4000;
 
 app.use(
   cors({
-    origin: ["http://localhost:3000","http://localhost:3001"],
+    origin: [
+      "http://localhost:3000",
+      "http://localhost:3001",
+      "https://ecommerce-cloths-24x7.vercel.app/",
+      "https://ecommerce-to57.onrender.com/"
+    ],
     credentials: true,
-  })
+  }),
 );
 app.use(express.json());
 
@@ -30,8 +35,8 @@ app.use(cors());
 // api endpoints
 app.use("/api/user", userRoute);
 app.use("/api/product", productRouter);
-app.use("/api/cart",cartRouter);
-app.use("/api/order",orderRouter); 
+app.use("/api/cart", cartRouter);
+app.use("/api/order", orderRouter);
 
 app.get("/", (req, res) => {
   res.send("API Working");
