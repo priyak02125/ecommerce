@@ -23,7 +23,7 @@ const LatestCollection = () => {
             key={product._id}
             id={product._id}
             image={product.image}
-            title={product.name}
+            name={product.name}
             price={product.price}
           />
         ))}

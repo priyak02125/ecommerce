@@ -64,7 +64,7 @@ const cartData = React.useMemo(() => {
 
 
   return (
-    <div className="px-22">
+    <div className="lg:px-22 px-5">
       <div className="text-2xl mb-3 border-t pt-14 border-gray-300">
         <Title text1={"YOUR"} text2={"CART"} />
       </div>
@@ -109,7 +109,7 @@ const cartData = React.useMemo(() => {
 
               <div>
                 <input
-                  className="border max-w-10 sm:max-w-13 px-1 sm:px-2 py-1"
+                  className="border max-w-10 sm:max-w-13 px-3 sm:px-2 py-1"
                   type="number"
                   min={1}
                   defaultValue={item.quantity}
@@ -140,8 +140,8 @@ const cartData = React.useMemo(() => {
         })}
       </div>
 
-      <div className="flex justify-end my-20">
-        <div className="w-[30%]">
+      <div className="flex justify-center sm:px-10 sm:justify-end my-20">
+        <div className="w-full sm:w-[45%] md:w-[30%]">
           <CartTotal />
           <div className="w-full text-end">
             <button

@@ -7,7 +7,7 @@ function Footer() {
     <div className="px-6 sm:px-20">
       {" "}
       {/* overall padding */}
-      <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm">
+      <div className="flex flex-col md:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-20 md:mt-40 text-sm">
         {/* Logo & Description */}
         <div>
           {/* <Image
