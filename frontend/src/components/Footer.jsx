@@ -4,19 +4,28 @@ import { assets } from "../assests/assets.js";
 
 function Footer() {
   return (
-    <div className="px-6 sm:px-20"> {/* overall padding */}
+    <div className="px-6 sm:px-20">
+      {" "}
+      {/* overall padding */}
       <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm">
         {/* Logo & Description */}
         <div>
-          <Image
+          {/* <Image
             src={assets.logo}
             alt="Hero Image"
             width={50}
             height={50}
             className="mb-5 w-32"
+          /> */}
+          <Image
+            src="/logo1.png"
+            alt="Logo Image"
+            width={120}
+            height={200}
+            className="cursor-pointer"
           />
           <p className="w-full md:w-2/3 text-gray-600">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+          Rivio is your destination for quality fashion, curated with style and care to bring you the best in clothing and accessories.
           </p>
         </div>
 
@@ -40,10 +49,8 @@ function Footer() {
           </ul>
         </div>
       </div>
-
       {/* Divider */}
       <hr className="border-gray-300" />
-
       {/* Copyright */}
       <div className="text-center mt-5 text-gray-600">
         © 2026 Ecommerce. All rights reserved.

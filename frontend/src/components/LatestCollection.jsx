@@ -10,17 +10,14 @@ const LatestCollection = () => {
   const latestProducts = products.slice(0, 10);
 
   return (
-    <div className="my-10">
-      <div className="text-center py-8 text-3xl">
+    <div className="lg:my-10 my-5 mx-2">
+      <div className="text-center lg:py-8 text-2xl md:text-3xl mb-5 lg:mb-0">
         <Title text1="LATEST" text2="COLLECTION" />
         <p className="w-3/4 m-auto text-xs sm:text-sm md:text-base text-gray-600">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et, veniam
-          hic vero animi fuga enim recusandae voluptatibus, cum reprehenderit
-          nesciunt nulla est natus ullam possimus, excepturi illum rem laborum
-          inventore.
+         Explore our latest fashion collection designed to keep you stylish and confident every day. From trendy tops and chic dresses to comfortable loungewear and statement pieces, each item is crafted with quality fabrics and modern silhouettes. Refresh your wardrobe with pieces that blend timeless style and everyday comfort, curated just for you.
         </p>
       </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6 px-22 ">
+      <div className="px-2 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6 lg:px-22 ">
         {latestProducts.map((product) => (
           <ProductItem
             key={product._id}

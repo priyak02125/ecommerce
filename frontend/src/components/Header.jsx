@@ -31,7 +31,7 @@ export default function Header() {
           // onClick={() => setShowSearch(true)}
           src="/logo1.png"
           alt="Logo Image"
-          width={100}
+          width={120}
           height={200}
           className="cursor-pointer"
         />

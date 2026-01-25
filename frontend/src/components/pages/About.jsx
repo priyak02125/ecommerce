@@ -5,12 +5,12 @@ import { assets } from "../../assests/assets";
 import NewsletterBox from "../../components/NewsletterBox"
 function About() {
   return (
-    <div className="px-22">
+    <div className="px-5 lg:px-22">
       <div className="text-2xl border-gray-300 text-center pt-8 border-t">
         <Title text1={"ABOUT"} text2={"US"} />
       </div>
 
-      <div className="my-10 flex gap-12">
+      <div className="my-10 flex flex-col md:flex-row gap-12 items-center">
         <Image
           src={assets.about_img}
           alt="search icon"
@@ -18,7 +18,7 @@ function About() {
           height={400}
           className="cursor-pointer"
         />
-        <div className="flex flex-col justify-center gap-6 md:w-2/4 text-gray-600">
+        <div className="flex flex-col justify-center gap-6  md:w-2/4 text-gray-600">
           <p>
             We are an ecommerce platform dedicated to bringing you high-quality
             products at affordable prices. Our goal is to make online shopping
@@ -44,11 +44,11 @@ function About() {
           </p>
         </div>
       </div>
-      <div className="text-xl">
+      <div className="text-xl mb-6">
         <Title text1={"WHY"} text2={"CHOOSE US"} />
       </div>
-     <div className="flex md:flex-row text-sm mb-20 border border-gray-300">
-  <div className="border border-gray-300 px-10 md:px-16 py-4 sm:py-12 flex flex-col gap-3">
+     <div className="flex md:flex-row text-xs sm:text-sm mb-20 border border-gray-300">
+  <div className="border border-gray-300 px-3 sm:px-10 md:px-16 py-4 sm:py-12 flex flex-col gap-3">
     <p className="font-semibold">Quality Assurance:</p>
     <p className="text-gray-600">
       Every product is carefully checked to ensure quality, durability,
@@ -56,7 +56,7 @@ function About() {
     </p>
   </div>
 
-  <div className="border border-gray-300 px-10 md:px-16 py-4 sm:py-12 flex flex-col gap-3">
+  <div className="border border-gray-300 px-3 sm:px-10 md:px-16 py-4 sm:py-12 flex flex-col gap-3">
     <p className="font-semibold">Convenience:</p>
     <p className="text-gray-600">
       Enjoy easy browsing, secure payments, and fast delivery for a smooth
@@ -64,7 +64,7 @@ function About() {
     </p>
   </div>
 
-  <div className="border border-gray-300 px-10 md:px-16 py-4 sm:py-12 flex flex-col gap-3">
+  <div className="sm:border sm:border-gray-300 px-3 sm:px-10 md:px-16 py-4 sm:py-12 flex flex-col gap-3">
     <p className="font-semibold">Exceptional Customer Service:</p>
     <p className="text-gray-600">
       Our support team is always ready to help and ensure your

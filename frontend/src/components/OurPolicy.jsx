@@ -3,7 +3,7 @@ import Image from "next/image";
 import { assets } from "../assests/assets.js";
 function OurPolicy() {
   return (
-    <div className="flex flex-col sm:flex-row justify-around gap-12 sm:gap-2 text-center py-20 text-xs sm:text-sm md:text-sm text-gray-700 ">
+    <div className="flex flex-col sm:flex-row justify-around gap-12 sm:gap-2 text-center py-10 sm:py-12 lg:py-20 text-xs sm:text-sm md:text-sm text-gray-700 ">
       <div>
         <Image
           src={assets.exchange_icon}

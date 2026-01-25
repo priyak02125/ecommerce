@@ -24,7 +24,7 @@ const SearchBar = () => {
     <div className="px-6 sm:px-22">
       <div className="border-t border-b bg-gray-50 py-3">
         <div className="flex items-center justify-center gap-4">
-          <div className="flex items-center border border-gray-300 rounded-full px-4 py-2 w-3/4 sm:w-1/2 bg-white">
+          <div className="flex items-center border border-gray-300 rounded-full px-2 lg:px-4 py-2 w-[80%] sm:w-1/2 bg-white">
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -38,7 +38,7 @@ const SearchBar = () => {
               alt="search icon"
               width={15}
               height={15}
-              className="cursor-pointer"
+              className="cursor-pointer px-0.5  "
             />
           </div>
 
@@ -48,7 +48,7 @@ const SearchBar = () => {
             alt="close icon"
             width={10}
             height={10}
-            className="cursor-pointer"
+            className="cursor-pointer "
           />
         </div>
       </div>

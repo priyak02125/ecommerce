@@ -92,8 +92,8 @@ const Collection = () => {
   console.log("subcategory", subcategory);
 
   return (
-    <div className="px-6 sm:px-22">
-      <div className="flex flex-col sm:flex-row gap-6 pt-10 border-t border-gray-300">
+    <div className="px-4 lg:px-22">
+      <div className="flex flex-col sm:flex-row gap-6 pt-10 border-gray-300">
         {/* Left Side - filters */}
         <div className="min-w-max sm:w-60">
           {/* FILTER toggle for small screens */}
@@ -156,7 +156,7 @@ const Collection = () => {
         </div>
 
         {/* Right Side - products */}
-        <div className="flex-1">
+        <div className="flex-1 px-">
           <div className="flex justify-between text-base sm:text-2xl mb-2">
             <Title text1="ALL" text2="COLLECTION" />
 
@@ -164,7 +164,7 @@ const Collection = () => {
             <select
               value={sortType}
               onChange={(e) => setSortType(e.target.value)}
-              className="border border-gray-300 text-sm px-2 py-1 focus:outline-none"
+              className="border border-gray-300 text-xs sm:text-sm px-2 py-1 focus:outline-none"
             >
               <option value="relevant">Sort by: Relevant</option>
               <option value="low-high">Sort by: Price (Low to High)</option>
