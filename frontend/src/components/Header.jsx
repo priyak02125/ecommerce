@@ -26,7 +26,7 @@ export default function Header() {
 
   return (
     <div className="flex items-center justify-between px-4 sm:px-8 lg:px-24 py-4 text-gray-600 font-semibold max-w-7xl mx-auto">
-      <div className="">
+      <Link href='/'>
         <Image
           // onClick={() => setShowSearch(true)}
           src="/logo1.png"
@@ -35,7 +35,7 @@ export default function Header() {
           height={200}
           className="cursor-pointer"
         />
-      </div>
+      </Link>
       <div className="hidden sm:flex gap-6 cursor-pointer text-sm">
         <Link href="/">
           <div>HOME</div>
