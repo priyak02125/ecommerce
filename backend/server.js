@@ -17,8 +17,8 @@ app.use(
     origin: [
       "http://localhost:3000",
       "http://localhost:3001",
-      "https://ecommerce-cloths-24x7.vercel.app/",
-      "https://ecommerce-to57.onrender.com/"
+      "https://ecommerce-cloths-24x7.vercel.app",
+      "https://ecommerce-to57.onrender.com"
     ],
     credentials: true,
   }),
