@@ -109,6 +109,9 @@ const ShopContextProvider = ({ children }) => {
         cart[itemId][size] = (cart[itemId][size] || 0) + 1;
         return cart;
       });
+
+      toast.success("Product added to cart");
+
       if (!token) return;
 
       try {
@@ -148,6 +151,8 @@ const ShopContextProvider = ({ children }) => {
 
         return cart;
       });
+
+      toast.success("Product remove from cart");
 
       if (!token) return;
 
